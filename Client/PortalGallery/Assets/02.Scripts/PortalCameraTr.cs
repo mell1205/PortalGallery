@@ -26,7 +26,10 @@ public class PortalCameraTr : MonoBehaviour {
 
 	public float max;
 
-	//private portalCamFov;
+	private Camera portalCamCam;
+	public float portalCamFov;
+
+	public Material portalMat;
 
 
 	// Use this for initialization
@@ -65,6 +68,15 @@ public class PortalCameraTr : MonoBehaviour {
 				absoluteZz = -zz;
 
 			max = Mathf.Max (absoluteXx, absoluteYy);
+
+			portalCamCam = GetComponent<Camera> ();
+			portalCamCam.fieldOfView = portalCamFov;
+
+			portalCamFov = Mathf.Atan2((max + 3.6f),zz) * 180.0f/Mathf.PI * 2.0f;
+
+			//portalMat.SetTextureOffset ("Offset", new Vector2 ((max + xx) / (2.0f * (max + 3.6f)), (max + yy) / (2.0f * (max + 3.6f))));
+
+
 
 
 		}
