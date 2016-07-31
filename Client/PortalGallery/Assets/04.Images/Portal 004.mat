@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Portal 01
+  m_Name: Portal 004
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -20,8 +20,8 @@ Material:
           name: _MainTex
         second:
           m_Texture: {fileID: 8400000, guid: 27251d39973464346b3114be0f73a8ba, type: 2}
-          m_Scale: {x: 0.32, y: 0.32}
-          m_Offset: {x: 0, y: 0.34}
+          m_Scale: {x: 0.9379198, y: 0.9379198}
+          m_Offset: {x: 0, y: 0.031040099}
       data:
         first:
           name: _BumpMap

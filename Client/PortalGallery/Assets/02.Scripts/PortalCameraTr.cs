@@ -25,8 +25,10 @@ public class PortalCameraTr : MonoBehaviour {
 	public float absoluteZz;
 
 	public float max;
+	private float r = 3.6f;
 
 	private Camera portalCamCam;
+
 	public float portalCamFov;
 
 	public Material portalMat;
@@ -72,9 +74,13 @@ public class PortalCameraTr : MonoBehaviour {
 			portalCamCam = GetComponent<Camera> ();
 			portalCamCam.fieldOfView = portalCamFov;
 
-			portalCamFov = Mathf.Atan2((max + 3.6f),zz) * 180.0f/Mathf.PI * 2.0f;
+			portalCamFov = Mathf.Atan2((max + r),zz) * 180.0f/Mathf.PI * 2.0f;
 
 			//portalMat.SetTextureOffset ("Offset", new Vector2 ((max + xx) / (2.0f * (max + 3.6f)), (max + yy) / (2.0f * (max + 3.6f))));
+
+
+			portalMat.mainTextureOffset = new Vector2 ((max + xx) / (2.0f * (max + r)), (max + yy) / (2.0f * (max + r)));
+			portalMat.mainTextureScale = new Vector2 (r / (max + r), r / (max + r));
 
 
 
