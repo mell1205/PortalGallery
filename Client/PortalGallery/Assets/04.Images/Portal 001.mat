@@ -20,8 +20,8 @@ Material:
           name: _MainTex
         second:
           m_Texture: {fileID: 8400000, guid: 6794fead3ad094f53bd1751e5289283c, type: 2}
-          m_Scale: {x: 0.4791017, y: 0.4791017}
-          m_Offset: {x: 0.52089834, y: 0.26044917}
+          m_Scale: {x: 0.22518219, y: 0.22518219}
+          m_Offset: {x: 0.15597165, y: 0}
       data:
         first:
           name: _BumpMap

@@ -33,6 +33,7 @@ public class MainCameraTr : MonoBehaviour {
 
 		Vector3 moveDir = (Vector3.forward * v) + (Vector3.right * h) + (Vector3.up * u); 
 		cameraTr.Translate (moveDir.normalized *moveSpeed*Time.deltaTime); 
+		//cameraTr.Translate (Vector3.forward*moveSpeed*Time.deltaTime);
 	
 	}
 }

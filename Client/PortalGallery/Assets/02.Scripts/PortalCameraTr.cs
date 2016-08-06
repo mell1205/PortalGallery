@@ -13,8 +13,8 @@ public class PortalCameraTr : MonoBehaviour {
 
 	public float moveSpeed = 10.0f;
 
-	public Vector3 z;
-	public Vector3 xy;
+	private Vector3 z;
+	private Vector3 xy;
 
 	public float xx;
 	public float yy;
@@ -29,7 +29,7 @@ public class PortalCameraTr : MonoBehaviour {
 
 	private Camera portalCamCam;
 
-	public float portalCamFov;
+	private float portalCamFov;
 
 	public Material portalMat;
 
@@ -37,16 +37,17 @@ public class PortalCameraTr : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		portalCamTr = GetComponent<Transform> ();
+		portalCamCam = GetComponent<Camera> ();
 	}
 
 	// Update is called once per frame
 	void Update () {
-		v = Input.GetAxis ("Vertical"); 
-		h = Input.GetAxis ("Horizontal"); 
-		u = Input.GetAxis ("Up");
-
-		Vector3 moveDir = (Vector3.forward * v) + (Vector3.right * h) + (Vector3.up * u); 
-		portalCamTr.Translate (moveDir.normalized *moveSpeed*Time.deltaTime); 
+//		v = Input.GetAxis ("Vertical"); 
+//		h = Input.GetAxis ("Horizontal"); 
+//		u = Input.GetAxis ("Up");
+//
+//		Vector3 moveDir = (Vector3.forward * v) + (Vector3.right * h) + (Vector3.up * u); 
+//		portalCamTr.Translate (moveDir.normalized *moveSpeed*Time.deltaTime); 
 
 		Debug.DrawRay (portalCamTr.position, portalCamTr.forward * 1000.0f, Color.green);
 
@@ -71,13 +72,10 @@ public class PortalCameraTr : MonoBehaviour {
 
 			max = Mathf.Max (absoluteXx, absoluteYy);
 
-			portalCamCam = GetComponent<Camera> ();
+
 			portalCamCam.fieldOfView = portalCamFov;
 
-			portalCamFov = Mathf.Atan2((max + r),zz) * 180.0f/Mathf.PI * 2.0f;
-
-			//portalMat.SetTextureOffset ("Offset", new Vector2 ((max + xx) / (2.0f * (max + 3.6f)), (max + yy) / (2.0f * (max + 3.6f))));
-
+			portalCamFov = Mathf.Atan2((max + r),absoluteZz) * 180.0f/Mathf.PI * 2.0f;
 
 			portalMat.mainTextureOffset = new Vector2 ((max + xx) / (2.0f * (max + r)), (max + yy) / (2.0f * (max + r)));
 			portalMat.mainTextureScale = new Vector2 (r / (max + r), r / (max + r));
