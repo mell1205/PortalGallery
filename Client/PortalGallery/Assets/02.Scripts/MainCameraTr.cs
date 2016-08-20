@@ -1,8 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MainCameraTr : MonoBehaviour {
-
+public class MainCameraTr : MonoBehaviour
+{
+    public enum Mode
+    {
+        Input,
+        Enter,
+    }
 //	private float prevX;
 //	private float prevY;
 //	private float prevZ;
@@ -18,6 +23,8 @@ public class MainCameraTr : MonoBehaviour {
 	private float u;
 
 	public float moveSpeed = 10.0f;
+    private Mode m_mode = Mode.Input;
+    private GameObject m_portalObj = null;
 
 	// Use this for initialization
 	void Start () {
@@ -26,14 +33,26 @@ public class MainCameraTr : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		v = Input.GetAxis ("Vertical"); 
-		h = Input.GetAxis ("Horizontal"); 
-		u = Input.GetAxis ("Up");
+
+        if (m_mode == Mode.Input)
+        {
+            v = Input.GetAxis("Vertical");
+            h = Input.GetAxis("Horizontal");
+            u = Input.GetAxis("Up");
 
 
-		Vector3 moveDir = (Vector3.forward * v) + (Vector3.right * h) + (Vector3.up * u); 
-		cameraTr.Translate (moveDir.normalized *moveSpeed*Time.deltaTime); 
-		//cameraTr.Translate (Vector3.forward*moveSpeed*Time.deltaTime);
-	
-	}
+            Vector3 moveDir = (Vector3.forward * v) + (Vector3.right * h) + (Vector3.up * u);
+            cameraTr.Translate(moveDir.normalized * moveSpeed * Time.deltaTime);
+            //cameraTr.Translate (Vector3.forward*moveSpeed*Time.deltaTime);
+        }
+        else if (m_mode == Mode.Enter)
+        {
+
+        }
+    }
+
+    public void Enter(GameObject portalObj)
+    {
+        m_portalObj = portalObj;
+    }
 }
