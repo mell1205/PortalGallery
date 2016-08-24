@@ -22,7 +22,7 @@ public class MainCameraTr : MonoBehaviour
 	private float v;
 	private float u;
 
-	public float moveSpeed = 10.0f;
+	public float moveSpeed = 1.0f;
     private Mode m_mode = Mode.Input;
     private GameObject m_portalObj = null;
 
@@ -42,6 +42,7 @@ public class MainCameraTr : MonoBehaviour
 
 
             Vector3 moveDir = (Vector3.forward * v) + (Vector3.right * h) + (Vector3.up * u);
+            //Vector3 moveDir = Vector3.forward + Vector3.right + Vector3.up;
             cameraTr.Translate(moveDir.normalized * moveSpeed * Time.deltaTime);
             //cameraTr.Translate (Vector3.forward*moveSpeed*Time.deltaTime);
         }

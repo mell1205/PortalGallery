@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PortalCamera : MonoBehaviour {
 
-	private Transform portalCamTr;
+	public Transform portalCamTr;
 	public Transform portal;
 
 	public GetPosition mainPortal;

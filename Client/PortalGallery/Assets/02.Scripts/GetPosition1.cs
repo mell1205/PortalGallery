@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GetPosition : MonoBehaviour {
+public class GetPosition1 : MonoBehaviour {
 
 	public Transform mainCamTr;
 
@@ -32,34 +32,17 @@ public class GetPosition : MonoBehaviour {
 		portalTr = GetComponent<Transform> ();
 		layerMgr = GameObject.Find ("LayerManager").GetComponent<LayerManager> ();
 
-		layerZ = layerMgr.GetLayerIndex ();
-		layerX = layerMgr.GetLayerIndex ();
-		layerY = layerMgr.GetLayerIndex ();
+		layerZ = gameObject.layer;
 
-		gameObject.layer = layerZ;
-		portalTr.GetChild(1).gameObject.layer = layerX;
-		portalTr.GetChild (0).gameObject.layer = layerY;
+        layerX = portalTr.GetChild(1).gameObject.layer;
 
-        if (Physics.Raycast(mainCamTr.position, portalTr.forward, out hitZ, 1000.0f, 1 << layerZ))
-        {
-            Debug.DrawRay(mainCamTr.position, portalTr.forward * 1000.0f, Color.blue);
-            z = hitZ.point - mainCamTr.position;
-            zz = z.magnitude;
+        layerY = portalTr.GetChild (0).gameObject.layer;
 
-            GetXandY();
-
-            // when passed, make portal rotate!!!!
-
-        }
-        else if (Physics.Raycast(mainCamTr.position, -portalTr.forward, 1000.0f, 1 << layerZ))
-        {
-            portalTr.Rotate(portalTr.up, 180.0f);
-        }
 
     }
 	
 	// Update is called once per frame
-	/*void Update () 
+	void Update () 
 	{
 
 		if (Physics.Raycast (mainCamTr.position, portalTr.forward, out hitZ, 1000.0f, 1 << layerZ)) 
@@ -78,7 +61,7 @@ public class GetPosition : MonoBehaviour {
 			portalTr.Rotate (portalTr.up, 180.0f);
 		}
 
-	}*/
+	}
 
 	void GetXandY()
 	{

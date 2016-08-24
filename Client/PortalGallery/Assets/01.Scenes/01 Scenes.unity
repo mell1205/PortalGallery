@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.8016475, g: 0.708447, b: 0.6230633, a: 1}
+  m_IndirectSpecularColor: {r: 0.807877, g: 0.7100136, b: 0.61985713, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -181,6 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee0fce21f3dfb45ed87912d8007d3b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  portalCamTr: {fileID: 0}
   portal: {fileID: 1851601539}
   mainPortal: {fileID: 850046773}
   xx: 0
@@ -1534,6 +1535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee0fce21f3dfb45ed87912d8007d3b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  portalCamTr: {fileID: 0}
   portal: {fileID: 315216342}
   mainPortal: {fileID: 1932333593}
   xx: 0
@@ -2985,6 +2987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee0fce21f3dfb45ed87912d8007d3b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  portalCamTr: {fileID: 0}
   portal: {fileID: 1582131621}
   mainPortal: {fileID: 233311404}
   xx: 0
@@ -3042,6 +3045,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   portalCamTr: {fileID: 458012509}
+  portal: {fileID: 315216342}
 --- !u!65 &724303839
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3476,6 +3480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   portalCamTr: {fileID: 717826710}
+  portal: {fileID: 990230103}
 --- !u!65 &920616909
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6646,6 +6651,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   portalCamTr: {fileID: 1808770189}
+  portal: {fileID: 990230103}
 --- !u!65 &1734134491
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7195,6 +7201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee0fce21f3dfb45ed87912d8007d3b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  portalCamTr: {fileID: 0}
   portal: {fileID: 990230103}
   mainPortal: {fileID: 667129254}
   xx: 0
@@ -7327,6 +7334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   portalCamTr: {fileID: 26657988}
+  portal: {fileID: 1851601539}
 --- !u!65 &1825051707
 BoxCollider:
   m_ObjectHideFlags: 0

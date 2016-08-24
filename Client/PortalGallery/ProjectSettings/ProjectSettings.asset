@@ -164,8 +164,8 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: user1.keystore
-  AndroidKeyaliasName: portal
+  AndroidKeystoreName: 
+  AndroidKeyaliasName: 
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
   androidEnableBanner: 1
